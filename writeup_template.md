@@ -130,7 +130,7 @@ the beginning I added dropout layer and optimized the hyperparameters. Adam Opti
 My final model results were:
 * training set accuracy of % 99
 * validation set accuracy of % 94
-* test set accuracy of % 93
+* test set accuracy of % 931
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
