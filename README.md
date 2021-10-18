@@ -178,7 +178,19 @@ The model was able to correctly guess 7 of the 8 traffic signs, which gives an a
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+The code for making predictions on my final model is located in the 17th code cell of the Ipython notebook.
+
+```python
+test_labels = [34,12,1,14,25,11,18,38] # Correct labels for test data -in order
+
+
+with tf.Session() as sess:
+    sess.run(tf.global_variables_initializer())
+    saver3 = tf.train.import_meta_graph('./lenet_project.meta')
+    saver3.restore(sess, "./lenet_project")
+    my_accuracy = evaluate(test_images_normalized, test_labels)
+    print("Test Set Accuracy = {:.3f}".format(my_accuracy))
+```
 
 For 7 of the images, the model is relatively sure for its prediction. However, for the 5th picture (Roadwork) model seem to be struggling and making false predictions.
 From the softmax probabilities it can be seen that model confuses and predicts as "wild animals crossing" label.
